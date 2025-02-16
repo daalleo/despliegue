@@ -25,6 +25,7 @@ with tab1:
 with tab2:
     selected_asset = st.selectbox("Seleccione un activo para analizar:", simbolos)
     # Mostrar el gráfico interactivo en Streamlit
+    fig = px.histogram(titanic, x="age")
     st.plotly_chart(fig)
 
 
