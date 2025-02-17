@@ -11,6 +11,7 @@ fig = px.histogram(titanic, x="age")
 # Configuración de la página
 st.set_page_config(page_title="Dashboard", layout="wide")
 st.sidebar.title("Análisis de datos")
+columna_input = st.sidebar.text_input("Ingrese los símbolos de las acciones separados por comas (por ejemplo: Edad):", "age")
 
 # Pestañas
 tab1, tab2 = st.tabs(["Cuadros de desglose", "Gráficas"])
@@ -23,9 +24,7 @@ with tab1:
 
 # Pestaña 2
 with tab2:
+
     
     # Mostrar el gráfico interactivo en Streamlit
-    fig = px.histogram(titanic, x="age")
     st.plotly_chart(fig)
-
-
